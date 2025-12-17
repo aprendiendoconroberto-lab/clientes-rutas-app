@@ -1,1 +1,4 @@
+ruta_id,nombre_ruta,dia_semana,descripcion,activo
+R001,Ruta Centro,Lunes,Ruta principal,true
+R002,Ruta Norte,Martes,Ruta secundaria,true
 
