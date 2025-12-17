@@ -1,2 +1,3 @@
-cliente_id,nombre_cliente,lat,lng,foto_url,nota,ruta_id,dia_semana,creado_por,fecha_creacion,estado
+cliente_id,nombre_cliente,lat,lng,foto_url,nota,ruta_id,nombre_ruta,dia_semana,creado_por,fecha_creacion,estado
+
 
