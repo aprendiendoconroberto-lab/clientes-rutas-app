@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Clientes y Rutas</title>
+    <title>Rutas activas</title>
 </head>
 <body>
-    <h1>✅ App funcionando</h1>
-    <p>La aplicación está viva en internet.</p>
+    <h1>📍 Rutas activas</h1>
+
+    <ul>
+        {% for ruta in rutas %}
+            <li>
+                <strong>{{ ruta.nombre_ruta }}</strong>
+                — {{ ruta.dia_semana }}
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
-
