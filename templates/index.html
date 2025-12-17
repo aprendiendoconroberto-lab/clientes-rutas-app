@@ -1,18 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Rutas activas</title>
-</head>
-<body>
-    <h1>📍 Rutas activas</h1>
+    <meta charset="UTF-8">
+    <title>Alta de Cliente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <ul>
-        {% for ruta in rutas %}
-            <li>
-                <strong>{{ ruta.nombre_ruta }}</strong>
-                — {{ ruta.dia_semana }}
-            </li>
-        {% endfor %}
-    </ul>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 16px;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 16px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 14px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #125aa0;
+        }
+
+        .info {
+            margin-top: 24px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🧾 Alta de Cliente</h1>
+
+    <form method="POST">
+
+        <label for="nombre_cliente">Nombre del cliente</label>
+        <input
+            type="text"
+            id="nombre_cliente"
+            name="nombre_cliente"
+            placeholder="Ej. Tienda Don José"
+            required
+        >
+
+        <label for="ruta_id">Ruta (día y zona)</label>
+        <select id="ruta_id" name="ruta_id" required>
+            <option value="">-- Seleccione una ruta --</option>
+            {% for ruta in rutas %}
+                <option value="{{ ruta.ruta_id }}">
+                    {{ ruta.dia_semana }} — {{ ruta.nombre_ruta }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <label for="nota">Nota</label>
+        <textarea
+            id="nota"
+            name="nota"
+            placeholder="Ej. Cliente nuevo, dejar 2 garrafones"
+            rows="3"
+        ></textarea>
+
+        <button type="submit">Guardar cliente</button>
+    </form>
+
+    <div class="info">
+        <strong>ℹ️ Nota:</strong><br>
+        El cliente quedará asignado a la ruta seleccionada y se visitará
+        siempre ese día.
+    </div>
+
 </body>
 </html>
